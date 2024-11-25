@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>used to create a new array that includes elements from the original array </h1>
+    <p>array.filter(callback(element[, index[, array]])[, thisArg])
+    </p>
+
+    <script>
+        const numbers = [1, 2, 3, 4, 5, 6];
+        const evenNumbers = numbers.filter(number => number - 5 === 0);
+        console.log(evenNumbers);
+
+        console.log("******************");
+        const users = [
+            { name: "john", age: 25 },
+            { name: "jane", age: 30 },
+            { name: "bob", age: 20 },
+            { name: "Aung", age: 16 }
+        ];
+
+        const adults = users.filter(user => user.age >= 18);
+
+        const result = adults.length > 3 ? "adults" : "child";
+
+        console.log(result);
+        console.log("******************");
+
+
+
+        const words = ["apple", "banana", "cherry", "date", "elderberry"];
+        const longWords = words.filter(word => word.length < 5);
+
+        console.log(longWords);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

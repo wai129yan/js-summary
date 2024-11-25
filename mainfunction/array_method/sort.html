@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>sort() သည် JavaScript Array method တစ်ခုဖြစ်ပြီး၊ 
+        array ထဲရှိ elements များကို အလိုအလျောက် sorted order တွင် ပြောင်းပေးသည်။
+         ဒါကြောင့် စီထားတဲ့အတိုင်းတင်မဟုတ်ဘဲ၊ စီထားရမည့် စီစဉ်နည်းကိုသတ်မှတ်ပေးနိုင်ပါသည်။</h1>
+    <p>array.sort(compareFunction);
+    </p>
+    <h4>compareFunction (optional): ထို function သည် array ၏ element နှစ်ခုကို စစ်ဆေး၍၊ elements များကို ဘယ်လိုစီရန် သတ်မှတ်ပေးသည်။
+
+        Return Value: sort() သည် sorted array ကို return ပြန်ပေးသည်။</h4>
+
+        <script>
+            const prices = [1800, 2000, 3000, 5000, 500, 8000];
+
+            prices.sort((a,b)=> a - b);
+            console.log(prices);
+            // ascending order
+
+            console.log("****************************");
+
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.sort();
+            console.log(fruits);
+
+            console.log("****************************");
+
+            const numbers = [40, 100, 1, 5, 25, 10];
+            numbers.sort((a,b) => b - a);   
+            console.log(numbers);
+
+            console.log("****************************");
+
+            
+        </script>
+</body>
+</html>

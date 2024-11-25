@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>To check if an array or a string contains a certain value. It returns a boolean (true or false) </h1>
+    <p>
+        array.includes(valueToFind, fromIndex);
+        string.includes(searchString, position);
+    </p>
+
+    <script>
+        const fruits = [
+            "apple",
+            "banana",
+            "orange",
+            "grape",
+            "kiwi",
+        ];
+        const containsBanana = fruits.includes("banana");
+        console.log(containsBanana);
+
+        console.log("********************");
+        console.log("********************");
+
+        const text = "JavaScript is amazing";
+        console.log(text.includes("JavaScript"));
+        console.log(text.includes("javascript"));
+
+        console.log("*****************");
+        console.log("*****************");
+
+
+        const tasks = ["buy groceries", "clean the house", "pay bills"];
+        const newTask = "pay bills";
+        if (!tasks.includes(newTask)) {
+            tasks.push(newTask);
+            console.log(`${newTask} added to the list.`);
+        } else {
+            console.log(`${newTask} is already in the list.`);
+        }
+
+        console.log("***********************");
+        console.log("***********************");
+
+        const prohibitWord = ["spam","advertisement","rrscam"];
+        const message = "This is not a scam";
+
+        if(prohibitWord.some(word => message.includes(word)))
+        {
+            console.log("Message contains prohibited content");
+        }else{
+            console.log("Message is clean");
+        }
+
+        
+        console.log("***********************");
+        console.log("***********************");
+            
+        const supportedFeatures = ["localStorage","fetch","WebSocket"];
+        if (supportedFeatures.includes("fetch")){
+            console.log("Your browser support fetch");
+        } else {
+            console.log("Fetch is not supported");
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>add one or more elements to the end of an array</h1>
+    <p>let newLength = array.push(element1, element2, ..., elementN);</p>
+
+    <h4>Data အသစ်တွေ ထည့်သွင်းဖို့
+        History tracking လုပ်ဖို့
+        Queue management လုပ်ဖို့
+        Notifications ထည့်သွင်းဖို့
+        Lists တွေ manage လုပ်ဖို့</h4>
+    <script>
+        class ShoppingCart {
+            constructor() {
+                this.items = [];
+                this.totalAmount = 0;
+            }
+
+            addItem(item) {
+                this.items.push(item);
+                this.calculateTotal();
+                return this.items;
+            }
+
+            calculateTotal() {
+                this.totalAmount = this.items.reduce((total, item) => total + item.price, 0);
+            }
+            viewCart() {
+                return {
+                    item: this.iteme,
+                    total: this.totalAmount
+                };
+            }
+        }
+        const cart = new ShoppingCart();
+
+        cart.addItem({ name: "book", price: 100 });
+        cart.addItem({ name: "pen", price: 50 });
+        cart.addItem({ name: "pencil", price: 20 });
+        console.log(cart.viewCart());
+
+        console.log("***************************");
+
+        let cartT = ["Apple", "Banana", "Orange"];
+        cartT.push("Mango", "Grapes");
+        console.log(cartT);
+
+        console.log("***************************");
+
+        // Event Registration System
+        class EventManager {
+            constructor(eventName, maxCapacity) {
+                this.eventName = eventName;
+                this.maxCapacity = maxCapacity;
+                this.attendees = [];
+                this.waitingList = [];
+            }
+
+            // Attendee အသစ်စာရင်းသွင်းတဲ့ function
+            registerAttendee(attendee) {
+                if (this.attendees.length < this.maxCapacity) {
+                    this.attendees.push({
+                        ...attendee,
+                        registeredAt: new Date(),
+                        status: 'confirmed'
+                    });
+                    return {
+                        success: true,
+                        message: `${attendee.name} စာရင်းသွင်းပြီးပါပြီ`,
+                        status: 'confirmed'
+                    };
+                } else {
+                    this.waitingList.push({
+                        ...attendee,
+                        registeredAt: new Date(),
+                        status: 'waiting'
+                    });
+                    return {
+                        success: true,
+                        message: `${attendee.name} waiting list ထဲထည့်ပြီးပါပြီ`,
+                        status: 'waiting'
+                    };
+                }
+            }
+
+            // Attendee စာရင်းကြည့်တဲ့ function
+            getAttendeesList() {
+                return {
+                    confirmed: this.attendees,
+                    waiting: this.waitingList,
+                    totalConfirmed: this.attendees.length,
+                    totalWaiting: this.waitingList.length
+                };
+            }
+        }
+
+        // အသုံးပြုပုံ
+        const seminar = new EventManager("Tech Seminar 2024", 3);
+
+        // Attendee တွေ register လုပ်ကြည့်မယ်
+        const attendees = [
+            { name: "မောင်မောင်", email: "mgmg@email.com", phone: "09123456789" },
+            { name: "စုစု", email: "susu@email.com", phone: "09987654321" },
+            { name: "ကိုကို", email: "koko@email.com", phone: "09555666777" },
+            { name: "မေမေ", email: "mama@email.com", phone: "09111222333" }
+        ];
+
+        attendees.forEach(attendee => {
+            console.log(seminar.registerAttendee(attendee));
+        });
+
+        console.log(seminar.getAttendeesList());
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> execute a provided function once for each element in an array</h1>
+    <p>array.forEach(callback(currentValue, index, array), thisArg)
+    </p>
+
+    <script>
+        const users = [
+            { id: 1, name: "Alice" },
+            { id: 2, name: "Bob" },
+            { id: 3, name: "Charlie" },
+            { id: 4, name: "David" },
+        ];
+        users.forEach(user => {
+            console.log(user.id)
+        });
+        console.log("******************");
+
+        const products = [
+            { id: 1, name: "laptop", price: 1000 },
+            { id: 2, name: "phone", price: 500 },
+            { id: 3, name: "tablet", price: 300 },
+            { id: 4, name: "headphone", price: 100 },
+        ];
+
+        products.forEach(product => {
+            product.price = product.price * 9;
+            console.log(product.price);
+        });
+        // const prices = products.map(product => product.price);
+
+        // console.log(prices);
+
+        console.log("******************");
+
+        const mails = [
+            { id: 1, email: "alice@example.com", ph: 2223456789 },
+            { id: 2, email: "bob@example.com", ph: 2235456789 },
+            { id: 3, email: "charlie@example.com", ph: 283732789 },
+            { id: 4, email: "david@example.com", ph: 2203836789 },
+        ];
+
+        mails.forEach(mail => {
+            sendMail(mail.email, mail.ph, "Hello, this is a test email,your Ph number is : ")
+        });
+
+        function sendMail(email, ph, message) {
+            console.log(message + ph);
+            // console.log("Message : " + message);
+            console.log("Email sent to : " + email);
+        }
+
+        console.log("******************");
+
+        const numbers = [1, 2, 3, 4, 5];
+        let total = 0;
+
+        numbers.forEach(number => {
+            total += number * 8;
+        });
+        console.log(total);
+
+        console.log("******************");
+        console.log("******************");
+
+        const tasks = [
+            { id: 1, title: "Finish report", assignedTo: "Alice", priority: "high", deadline: "2024-11-25", status: "pending" },
+            { id: 2, title: "Review code", assignedTo: "Bob", priority: "medium", deadline: "2024-11-26", status: "completed" },
+            { id: 3, title: "Prepare presentation", assignedTo: "Charlie", priority: "high", deadline: "2024-11-27", status: "pending" },
+            { id: 4, title: "Test application", assignedTo: "David", priority: "low", deadline: "2024-11-28", status: "completed" },
+            { id: 5, title: "Fix bug", assignedTo: "Eve", priority: "medium", deadline: "2024-11-29", status: "pending" },
+        ];
+
+        const isOverdue = (deadline) => {
+            const today = new Date();
+            const taskDeadline = new Date(deadline);
+            return taskDeadline < today;
+        };
+
+        const categorizedTasks = {
+            high: [],
+            medium: [],
+            low: []
+        };
+
+        tasks.forEach(task => {
+            categorizedTasks[task.priority].push(task);
+        });
+
+        tasks.forEach(task => {
+            if (isOverdue(task.deadline)) {
+                task.status = "overdue";
+            }
+        });
+        console.log("Tasks after status update:", tasks);
+
+        tasks.forEach(task => {
+            if (task.status === "overdue") {
+                sendEmail(task.assignedTo, `Task Reminder : "${task.title}"`, "This is a reminder that the task is overdue.");
+            }
+        });
+
+        function sendEmail(to, object, message) {
+            console.log(`Email sent to ${to}: Subject: "${subject}", Body: "${body}"`);
+        }
+
+        // 4. Group tasks by assigned users and generate summaries
+        const userTasks = {};
+
+        tasks.forEach(task => {
+            if (!userTasks[task.assignedTo]) {
+                userTasks[task.assignedTo] = [];
+            }
+            userTasks[task.assignedTo].push(task);
+        });
+
+        // Generate task summaries
+        Object.keys(userTasks).forEach(user => {
+            console.log(`Task Summary for ${user}:`);
+            userTasks[user].forEach(task => {
+                console.log(` - ${task.title} [Priority: ${task.priority}, Status: ${task.status}]`);
+            });
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>used to test whether at least one element in an array passes a specified test</h1>
+    <p>array.some(callback(element, index, array));
+    </p>
+    <h4>some() သည် JavaScript Array method တစ်ခုဖြစ်ပြီး၊ 
+        မည်သည့် element မှာမဆို provided callback function ရဲ့ 
+        condition ကို ဖြည့်စွက်နိုင်သည်ကို စစ်ဆေးရန်အသုံးပြုသည်။ 
+        အကယ်၍ တစ်ခုခုဖြည့်မည်ဆိုပါက true ကို return ပြန်ပေးမည်။ 
+        မဖြည့်ပါက false ကို return ပြန်ပေးသည်။
+        some() ကို ဖုန်းနံပါတ် တစ်ခုရဲ့ validity စစ်ဆေးခြင်း၊ 
+        အချိန်ဇယားမှ available slots ရှိ/မရှိ စစ်ဆေးခြင်းစသဖြင့် အများကြီးအသုံးပြုနိုင်သည်။
+    
+    </h4>
+
+    <script>
+        const orders = [
+            {customer:"Aung Aung",deliveryType:"standard"},
+            {customer:"Maung Maung",deliveryType:"express"},
+            {customer:"Mya Mya",deliveryType:"standard"},
+        ]
+        const hasExpressDelivery = orders.some(order => order.deliveryType === "express"); 
+        
+        console.log(hasExpressDelivery);
+
+        console.log("================================");
+
+        const phoneNumbers = ["09123456789", "09123456789", "09123456789"];
+        const hasInvalidPhone = phoneNumbers.some(number => isNaN(number));
+        console.log(hasInvalidPhone);
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>const newArray = array1.concat(array2, array3, ..., arrayN);</h1>
+    <h3>It returns a new array without modifying the original array.</h3>
+    <script>
+        const array1 = ['a'];
+        const array2 = [1,2,3,4,5]
+        const array3 = ['a','b','c','d','e']
+
+        const result = array1.concat(array2,array3);
+        console.log(result)
+       //multiple array
+       
+       const arr1 = [1];
+       const arr2 = [2,[3,4,5,6]];
+
+       const result2  = arr1.concat(arr2);
+       console.log(result2);
+       //nested array
+
+       const apiData1 = [{id:1,name:'sakib'},{id:2,name:'jane'}];
+       const apiData2 = [{id:3,name:'rakib'},{id:4,name:'Bob'}];
+
+       const combinedData = apiData1.concat(apiData2);
+       console.log(combinedData);
+
+       const electronis = ["TV", "Computer", "Laptop", "Mobile"];
+       const furniture = ["Table", "Chair", "Cupboard"];
+
+       const allProducts = electronis.concat(furniture);
+       console.log(allProducts);
+
+
+    </script>
+</body>
+</html>

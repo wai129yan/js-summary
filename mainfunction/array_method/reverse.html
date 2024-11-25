@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Used to reverse the order of elements in an array.</h1>
+    <p>array.reverse();</p>
+    <h4>Original array ကို modify လုပ်တယ်
+        Original array မပျက်စေချင်ရင် spread operator သုံးပြီး copy လုပ်သင့်တယ်
+        Chain operations တွေမှာ reverse() ရဲ့ position က အရေးကြီးတယ်
+        Empty array တွေမှာလည်း အလုပ်လုပ်တယ်
+        Reference type (objects, arrays) တွေပါရင် shallow copy ပဲရတယ်
+        CopyRetryClaude does not have the ability to run the code it generates yet.</h4>
+
+        <script>
+            const numbers = [1, 2, 3, 4, 5];
+            numbers.reverse();
+            console.log(numbers); 
+
+            console.log("********************************");
+
+            const fruits = ["apple", "banana", "cherry", "date"];
+            fruits.reverse();
+            console.log(fruits);
+            console.log("********************************");
+
+            const sentence = "Hello, world!";
+            const reversedSentence =sentence.split('').reverse().join('');
+            console.log(reversedSentence);
+
+            console.log("********************************");
+
+            const chatMessages = [
+                { sender: "Alice", message: "Hello!" },
+                { sender: "Bob", message: "Hi there!" },
+                { sender: "Alice", message: "How are you?" },
+                { sender: "Bob", message: "I'm doing well, thanks!" }
+            ];
+
+            const latestFirst = chatMessages.reverse();
+            console.log(latestFirst);
+
+            console.log("********************************");
+
+
+            class RankingSystem{
+                constructor(){
+                    this.rankings = ["Alice","Bob","MgMg","KoKo","SuSu"]; 
+                }
+                showReverseRankings(){
+                   return this.rankings.reverse();
+                }
+            }
+
+            const ranking = new RankingSystem();
+            console.log(ranking.showReverseRankings());
+
+            console.log("********************************");
+
+            const original = [1, 2, 3, 4, 5];
+            const reversed = [...original].reverse();
+            console.log(reversed);
+            // Original array မပျက်စေချင်ရင် spread operator သုံးပြီး copy လုပ်နိုင်တယ်
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+</body>
+</html>

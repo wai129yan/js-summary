@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Does not modify the original array.</h1>
+    <p>Returns a boolean</p>
+
+    <h3>array.every(callback(element[, index[, array]])[, thisArg])</h3>
+
+    <script>
+        const numbers = [1,2,3,4,5,6,7,8,9,10];
+        const allPostive  = numbers.every(number => number > 99);
+        console.log(allPostive);
+
+
+        const num = [1,-2,3,4,5];
+        const all= num.every(num => num > 0);
+        console.log(all);
+
+
+        const emptyArray = [];
+        const res = emptyArray.every(num => num > 0);
+        console.log(res);
+        //empty array
+
+        const words = ["hell","worl","javas"];
+        const allword = words.every (word => word.length < 5);
+        console.log(allword);
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Remove the last element from an array and returns that element.</h1>
+    <p>let lastElement = array.pop();</p>
+
+    <h4>pop() က original array ကို modify လုပ်ပါတယ်
+        Empty array မှာ pop() လုပ်ရင် undefined ရပါတယ်
+        pop() က array ရဲ့ နောက်ဆုံး item တစ်ခုတည်းကိုပဲ ဖယ်ထုတ်ပါတယ်
+        pop() ကို သုံးပြီး ဖယ်ထုတ်လိုက်တဲ့ item က array ထဲကနေ အပြီးအပိုင် ပျောက်သွားပါတယ်</h4>
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.pop());
+
+        console.log("***************************");
+
+        const scores = [85, 90, 78, 92, 88];
+        const lastScore = scores.pop();
+
+        console.log("Last score:", lastScore);
+        console.log("Updated scores:", scores);
+
+        console.log("***************************");
+
+        const students = [
+            {name:"mgmg",age:20},
+            {name:"aung aung",age:21},
+            {name:"su su",age:22},
+        ];
+
+        const lastStu = students.pop();
+        console.log(lastStu);
+        console.log(students);
+
+        console.log("***************************");
+
+        // const  bookSt = ["book1","book2","book3","book4","book5"];
+        // while(bookSt.length > 0) {
+        //     const book = book.pop();
+        //     console.log(`${book} is removed`);
+        //     console.log(`${book.length} is left`);
+        // }
+
+        console.log("***************************");
+
+        const todoList = [];
+
+        todoList.push("Buy groceries");
+        todoList.push("Do laundry");
+        todoList.push("Clean the house");
+        todoList.push("Pay bills");
+        console.log(todoList);
+
+        const removedItem = todoList.pop();
+        console.log(`Removed item: ${removedItem}`);
+
+        console.log("***************************");
+
+        const history = [];
+
+        history.push("https://www.google.com");
+        history.push("https://www.facebook.com");
+        history.push("https://www.youtube.com");
+        history.push("https://www.instagram.com");
+        console.log(history );
+
+        function goBack()
+        {
+            const previousPage = history.pop();
+            console.log(`Navigating back to: ${previousPage}`);
+            console.log(history);
+        }
+
+        goBack();
+
+
+        
+    </script>
+</body>
+</html>

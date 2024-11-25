@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> search for the first element</h1>
+    <p>array.find(callback(element[, index[, array]])[, thisArg])</p>
+
+    <script>
+
+        const numbers = [1,5,8,12,15];
+        const foundNumber = numbers.find(num => num > 10);
+        console.log(foundNumber);
+
+        console.log("******************");
+
+        const users = [
+            {name:"Alice",age:25},
+            {name:"Bob", age:30},
+            {name:"Charlie",age:35}
+        ];
+        const user  = users.find(user=> user.name.length > 5);
+        console.log(user);
+
+        console.log("******************");
+    
+        const cart = [
+            {id:1,name:"Product A",price:10},
+            {id:2,name:"Product B",price:20},
+            {id:3,name:"Product C",price:30},
+            {id:4,name:"Product D",price:40},
+            {id:5,name:"Product E",price:50},
+        ];
+        
+        const ProductId = 8;
+        const ProductInCart = cart.find(item => item.id === ProductId);
+        if(ProductInCart){
+            console.log("Product already found in cart:",ProductInCart);
+        }else{
+            console.log("Product not found in cart.");
+        }   
+
+
+        console.log("******************");
+
+        const movies = [
+            {title:"Movie A",rating:1},
+            {title:"Movie B",rating:3},
+            {title:"Movie C",rating:5},
+            {title:"Movie D",rating:7},
+        ];
+
+        const movie = movies.find(movie=>movie.rating > 1);
+        console.log(movie);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

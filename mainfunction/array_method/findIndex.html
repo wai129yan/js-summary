@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>search for an element in an array that satisfies 
+        a given condition and returns the index of the first element</h1>
+        <p>array.findIndex(callback(element[, index[, array]])[, thisArg])
+        </p>
+
+
+        <script>
+            const users = [
+                {id:1,name:"Alice"},
+                {id:2,name:"Bob"},
+                {id:3,name:"Charlie"},
+                {id : 4, name : "David"},
+            ];
+            const index = users.findIndex(user=> user.id === 2);
+            console.log(index);
+
+
+            console.log("******************");
+
+
+            const tasks = [
+                {id:1,title:"Do laundry",status:"completed"},
+                {id:2,title:"Complete project",status:"pending"},
+                {id:3,title:"Buy groceries",status:"completed"}
+            ];
+
+            const taskIndex = tasks.findIndex(task => task.status === "pending");
+
+            if(taskIndex !== -1){
+                tasks[taskIndex].status = "completed";
+                console.log("Updated status:" , tasks[taskIndex].status);
+            }else{
+                console.log("No pending tasks found.");
+            }
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Join all elements of an array into a single string.</h1>
+
+    <p>array.join(separator)</p>
+    <p>Works only on arrays.
+        Returns a single string.
+        Defaults to a comma as the separator if none is provided.
+        Customizable separator for different formatting needs.</p>
+
+
+    <script>
+        const fruits = ["apple","banana","cherry"];
+        console.log(fruits.join());
+        
+        console.log("*************************");
+
+        const numbers = [1,2,3,4];
+        console.log(numbers.join(" / "));
+
+        console.log("*************************");
+
+        const items = ["milk","bread","butter"];
+        console.log(items.join(" - "));
+
+        console.log("*************************");
+
+        const data = [
+            ["Name","Age","City"],
+            ["John",25,"New York"],
+            ["Jane",30,"London"],
+        ];
+
+        const csvData = data.map(row => row.join(",")).join("\n");
+        console.log(csvData);
+
+        console.log("*************************");
+        console.log("*************************");
+
+        const params = { search:"java",page:1,sort:"desc"};
+        const queryString = Object.entries(params).map(([key,value]) => `${key}=${value}`).join("&");
+
+        const url  = `https://example.com/search?${queryString}`;
+        console.log(url);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>map() method is used to iterate over an array and create a new array with the results</h1>
+    <h4>let newArray = array.map(function(element, index, array) {
+      
+      });</h4>
+
+      <p>မူရင်း array ကို မပြောင်းလဲစေပဲ array အသစ်တစ်ခု ရရှိခြင်း
+        array ထဲက item တိုင်းကို တူညီတဲ့ process လုပ်လို့ရခြင်း
+        code ရေးသားရတာ ရှင်းလင်းပြီး နားလည်ရလွယ်ကူခြင်း
+        chaining နဲ့ တခြား array method တွေနဲ့ တွဲသုံးလို့ရခြင်း</p>
+
+      <script>
+        const numbers = [1, 2, 3, 4, 5];
+        const doubledNumbers = numbers.map(function(number){
+            return number * 5;
+        });
+
+        console.log(doubledNumbers);
+
+        const tripleNumbers = numbers.map(number=>number*3);
+        console.log(tripleNumbers);
+
+        console.log("*********************************");
+
+        const products = [
+            {name:"laptop",price:500},
+            {name:"mobile",price:2000},
+            {name:"tv",price:3000},
+            {name:"watch",price:1000},
+        ];
+        // const productName = products.map(product=>product.name);
+        // console.log(productName);
+
+        // const productPrice = products.map(item => {
+        //     return {
+        //         name:item.name,
+        //         price:item.price* 0.9
+        //     };
+        // });
+        // console.log(productPrice);
+        // console.log("*********************************");
+        // formal way
+
+        const discountPro = products.map(item => {
+            const discountRate = item.name === "tv" ? 0.4 : 0.9;
+            return{
+                name:item.name,
+                price:item.price * discountRate,
+                discount: item.name === "tv" ? "40%" : "10%"
+            }
+        })
+        console.log(discountPro);
+
+        console.log("*********************************");
+
+        const disPro = products.map(item => {
+            let finalPrice ;
+            let discountLabel ;
+
+            if(item.name === "laptop"){
+                finalPrice = item.price * 0.4;
+                discountLabel = "60%";
+            } else {
+                finalPrice = item.price * 0.9;
+                discountLabel = "10%";
+            }
+
+            return {
+                name:item.name,
+                price:finalPrice,
+                discount:discountLabel
+            }
+        })
+        console.log(disPro);
+
+      </script>
+</body>
+</html>

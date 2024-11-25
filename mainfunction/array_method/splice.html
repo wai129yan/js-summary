@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>splice() သည် JavaScript Array method တစ်ခုဖြစ်ပြီး၊ array ထဲမှ 
+        element များကို ပြောင်းလဲခြင်း၊အကြောင်းပြုခြင်း သို့မဟုတ် ဖျက်ခြင်းအတွက် အသုံးပြုသည်။ 
+         ထို့အပြင်၊ array ၏တည်နေရာတစ်ခုတွင် element များကို ထည့်သွင်းရန်လည်း အသုံးပြုနိုင်ပါသည်။</h1>
+    <p>array.splice(start, deleteCount, item1, item2, ..., itemN);</p>
+    <h4>start: အစပြုသော index ရပ်တည်ချက်။
+        deleteCount: ဖျက်မည့် element များအရေအတွက် (optional)။
+        item1, item2, ..., itemN: array ထဲသို့ ထည့်သွင်းရန် element များ (optional)။</h4>
+
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+        fruits.splice(2, 2);
+        console.log(fruits);
+        console.log("****************************");
+
+        const fruits2 = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+        fruits2.splice(2, 1, "Lemon", "Melon");
+        console.log(fruits2);
+        console.log("****************************");
+
+        const animals = ["Dog", "Cat", "Lion", "Tiger", "Elephant"];
+        animals.splice(2, 2, "Monkey", "Bear");
+        console.log(animals);
+    </script>
+</body>
+</html>

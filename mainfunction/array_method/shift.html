@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>remove the first element from an array and returns that removed element</h1>
+    <p>let removedElement = array.shift();</p>
+    <h4>First In First Out (FIFO) စနစ်တွေမှာ အသုံးများပါတယ်
+        တန်းစီစာရင်းတွေ စီမံတဲ့အခါ သုံးလို့ကောင်းပါတယ်
+        Array ထဲက item တွေကို တစ်ခုချင်းစီ process လုပ်တဲ့အခါ အသုံးဝင်ပါတယ်</h4>
+
+        <script>
+            let items = ["item1","item2","item3","item4","item5"];
+            let firstItem = items.shift();
+            console.log(items);
+            console.log(firstItem);
+            
+
+            console.log("================================");
+
+            let firstPatient = ["patient1","patient2","patient3","patient4","patient5"];
+            console.log(firstPatient);
+            let firstPatientName = firstPatient.shift();
+            console.log(firstPatient);
+            console.log(firstPatientName);
+
+            console.log("================================");
+
+            let curry = [ "potato","tomato","onion","garlic","ginger"];
+            console.log(curry);
+            let firstCurry = curry.shift();
+            console.log(curry);
+            console.log(firstCurry);
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>first occurrence of a specified value in an array or string</h1>
+    <p>
+        array.indexOf(searchElement, fromIndex);
+        string.indexOf(searchValue, startIndex);
+    </p>
+
+    <script>
+        const fruits = ["apple ", "banana", "cherry", "banana"];
+        console.log(fruits.indexOf("banana"));
+        console.log(fruits.indexOf("grape"));
+        console.log(fruits.indexOf("banana", 2))
+
+        console.log("**************************");
+
+        const text = "JavaScript is fun!";
+
+        console.log(text.indexOf("Script"));
+        console.log(text.indexOf("script"));
+        console.log(text.indexOf("fun", 10));
+
+        console.log("**************************");
+
+        const cart = ["apple", "banana", "orange"];
+        const itemToCheck = "banana";
+
+        if (cart.indexOf(itemToCheck) !== 1) {
+            console.log(`${itemToCheck} is already in the cart`);
+        } else {
+            console.log(`${itemToCheck} is not in the cart`);
+        }
+
+        console.log("*************************");
+
+        const tasks = ["clean room", "do homework", "clean room"];
+        const uniqueTasks = [];
+
+        tasks.forEach(task => {
+            if (uniqueTasks.indexOf(task) === -1) {
+                uniqueTasks.push(task);
+            }
+        });
+
+        console.log(uniqueTasks);
+        // duplicate remove
+
+        console.log("*********************");
+
+        const inventory = ["widgetA", "widgetC", "widgetB", "widgetD", "widgetE"];
+        const product = "widgetB";
+
+        const productIndex = inventory.indexOf(product);
+        if (productIndex !== -1) {
+            console.log(`${product} found at position ${productIndex}.`);
+        } else {
+            console.log(`${product} not found.`);
+        }
+
+        console.log("************************");
+
+        const users = ["Alice", "Bob", "Charlie"];
+        const username = "bob";
+
+        if (users.indexOf(username) !== -1) {
+            console.log(`${username} exists.`);
+        } else {
+            console.log(`${username} not found.`);
+        }
+
+        console.log("************************");
+
+        const password = "P@ssw0rd!";
+        const prohibitedCharacters = ["!", "@", "#", "$"];
+
+        prohibitedCharacters.forEach(char => {
+            if (password.indexOf(char) !== -1) {
+                console.log(`Password contains prohibited character: ${char}`);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
