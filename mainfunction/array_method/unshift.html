@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>add one or more elements to the beginning of an array </h1>
+    <p>array.unshift(element1, element2, ..., elementN)</p>
+    <h4>unshift() သည် array၏ အရှေ့မှာ item များထည့်သွင်းပြီး array၏ length ကို တိုးစေသည်။
+        တစ်ခုထက်ပိုသော items များကို တစ်ပြိုင်တည်း ထည့်နိုင်သည်။
+        Return value သည် array သစ်၏ length ဖြစ်သည်။</h4>
+
+        <script>
+            let fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.unshift("Lemon","Pineapple");
+            console.log(fruits);
+            
+            console.log("****************************");    
+
+            let todoList = ["Go to school", "Do homework", "Go to bed"];
+
+            function addItem(task){
+                todoList.unshift(task);
+                console.log(todoList);
+            }
+            addItem("Go to work");
+
+            console.log("****************************");
+
+            let messages = [
+                "hello",
+                "how are you",
+                "what do you do"
+            ];
+
+            function sendMessage(newMessage){
+                messages.unshift(newMessage);
+                displayMessages();
+            }
+
+            function displayMessages(){
+                messages.forEach((msg,index) => {
+                    console.log(` ${msg}`);
+                });
+            }
+            sendMessage("I am fine");
+
+            console.log("****************************");
+
+            let browser = ["Chrome", "Firefox", "Edge", "Safari"];
+
+            browser.unshift("Opera");
+            console.log(browser);
+
+            console.log("****************************");
+
+
+
+
+        </script>
+</body>
+</html>

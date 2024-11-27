@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+    <p>let arrayName = [element1, element2, element</p>
+    <h4>JavaScript is a data structure used to store multiple values in a single variable</h4>
+    <script>
+        let products = ["Laptop", "Mobile", "Tablet", "Desktop"];
+        products.forEach(product =>  {
+            console.log(product);
+        });
+        
+        console.log("****************************");
+
+        let messages = [
+            {sender:"User1",text:"Hello"},
+            {sender:"User2",text:"Hi"},
+            {sender:"User1",text:"How are you?"},
+        ];
+        messages.unshift({sender:"User3",text:"I am fine"});
+        messages.forEach(msg => {
+            console.log(`${msg.sender} : ${msg.text}`);
+        });
+
+        console.log("****************************");
+
+        let tasks = ["Buy groceries" ,"complete homework","call the bank"];
+        let completedTasks = tasks.pop();
+
+        console.log(`Completed:${completedTasks}`);
+        console.log('Remaining Tasks: ${tasks}');
+        console.log("****************************");
+
+        let users = [
+            {id:1,name:"John",age:25},
+            {id:2,name:"Jane",age:30},
+            {id:3,name:"Bob",age:35},
+        ];
+        let user = users.find(user => user.age === 25);
+
+        console.log(user);
+        console.log("****************************");
+
+        let highScores = [1200,950,800,700,600];
+        highScores.push(1000);
+
+        highScores.sort((a,b) => b-a);
+        console.log(highScores);
+
+        console.log("****************************");
+
+        let temperatures = [72,68,75,70,78,71];
+
+        let average = temperatures.reduce((sum,temp) => sum + temp , 0) / temperatures.length;
+
+        console.log(`Average Temperature: ${average}°C`);
+
+        console.log("****************************");
+
+        let cart = [
+            {name: 'Laptop',price:5000},
+            {name: 'Mobile',price:30000},
+            {name: 'Tablet',price:20000},
+        ];
+
+        let totalPrice = cart.reduce((total,item)=> {
+            return total + item.price;
+        },0);
+
+        console.log(`total price:${totalPrice}`);
+
+        console.log("****************************");
+
+        let students = [
+            {name:"John",major:'CS'},
+            {name:"Jane",major:'Math'},
+            {name:"Bob",major:'Math'},
+            {name:"Alice",major:'Zoo'},
+        ];
+
+        let groupedStudents = students.reduce((groups,student) => {
+            if (!groups[student.major]){
+                groups[student.major] = [];
+            }
+            groups[student.major].push(student.name);
+            return groups;
+        },{});
+
+        console.log(groupedStudents);
+
+        console.log("****************************");
+
+        let fruits = ['apple','banana','orange','grape'];
+
+        let fruitCount = fruits.reduce((count,fruit)=> {
+            count[fruit] = (count[fruit] || 0) + 1;
+            return count;
+        },{});
+        console.log(fruitCount);
+
+    </script>
+</body>
+</html>

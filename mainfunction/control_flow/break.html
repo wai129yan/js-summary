@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JavaScript is a control structure used to execute a block of code conditionally.</h1>
+    <p>if (condition) {
+        // Code to execute if the condition is true
+        } else {
+        // Code to execute if the condition is false
+        }</p>
+    <h4>Condition တွေကို left to right စစ်ဆေးပါတယ်
+        Condition တစ်ခုနဲ့ ကိုက်ညီမှသာ code block execute လုပ်ပါတယ်
+        Nested condition များ ရှိနိုင်ပါတယ်
+        Performance အတွက် condition များကို အဓိကထားသော condition က မ complexity နည်းသော condition မှ စပြီး
+        စစ်ဆေးသင့်ပါတယ်</h4>
+
+    <script>
+
+        function generateBirthdayCard(age) {
+            if (age < 12) {
+                return "ကလေးငယ် မွေးနေ့van မင်္ဂလာပါ! 🎈🧁";
+            } else if (age >= 12 && age < 20) {
+                return "လူငယ် မွေးနေ့ van မင်္ဂလာပါ! 🎉🍰";
+            } else if (age >= 20 && age < 60) {
+                return "မွေးနေ့ van နိုင်ငံခြားစာ မင်္ဂလာပါ! 🍾🎂";
+            } else {
+                return "ကြီးပြင်း၍ သတိထားသော မွေးနေ့ van မင်္ဂလာပါ! 🌹🕯️";
+            }
+        }
+
+        // Test cases
+        console.log(generateBirthdayCard(5));   // ကလေးငယ်
+        console.log(generateBirthdayCard(15));  // လူငယ်
+        console.log(generateBirthdayCard(30));  // လူကြီး
+        console.log(generateBirthdayCard(70));  // အဘွား/အဘိုး
+
+        console.log("****************************");
+
+        // Online Shopping Cart Discount Calculator
+        function calculateDiscount(totalPrice) {
+            // Discount Rules
+            if (totalPrice < 10000) {
+                return {
+                    discountRate: 0,
+                    message: "ဈေးဝယ်ငွေ 10,000 ကျော်မှ Discount ရမည်"
+                };
+            } else if (totalPrice >= 10000 && totalPrice < 50000) {
+                return {
+                    discountRate: 5,
+                    message: "5% Discount ရရှိပြီ! 🛒"
+                };
+            } else if (totalPrice >= 50000 && totalPrice < 100000) {
+                return {
+                    discountRate: 10,
+                    message: "10% Discount ရရှိပြီ! 🎉"
+                };
+            } else {
+                return {
+                    discountRate: 15,
+                    message: "15% VIP Discount ရရှိပြီ! 🌟"
+                };
+            }
+        }
+
+        // Test Cases
+        console.log(calculateDiscount(5000));   // No Discount
+        console.log(calculateDiscount(20000));  // 5% Discount
+        console.log(calculateDiscount(60000));  // 10% Discount
+        console.log(calculateDiscount(150000)); // 15% Discount
+
+        console.log("****************************");
+
+        let temperature = 5;
+        if(temperature > 30 ) {
+            console.log("It's too hot!");
+        }else if (temperature >= 20 && temperature <=30) {
+            console.log("It's a nice day!");
+        }else{
+            console.log("It's cold!");
+        }
+
+    </script>
+</body>
+
+</html>
